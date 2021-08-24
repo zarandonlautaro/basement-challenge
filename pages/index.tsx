@@ -1,16 +1,28 @@
 import type {NextPage} from "next";
-import Image from "next/image";
+import React from "react";
 
-import logo from "../public/logo.svg";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import {PRODUCTS} from "../product/mock";
+import Products from "../product/screen/Products";
+import DrawerStore from "../product/screen/DrawerStore";
 
 const Home: NextPage = () => {
+  const [isCartOpen, setIsCartOpen] = React.useState<boolean>(false);
+
+  const closeCartIfIsOpen = () => isCartOpen && setIsCartOpen(false);
+
   return (
-    <div className="h-full flex bg-black">
-      <header className="m-auto text-white text-center">
-        <Image alt="Basement" src={logo} />
-        <h4>Lets get this party started</h4>
-      </header>
-    </div>
+    <>
+      <main className={`${isCartOpen && "opacity-70"}`} onClick={closeCartIfIsOpen}>
+        <Navbar setIsCartOpen={setIsCartOpen} />
+        <Header />
+        <Products products={PRODUCTS} />
+        <Footer />
+      </main>
+      <DrawerStore isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+    </>
   );
 };
 
