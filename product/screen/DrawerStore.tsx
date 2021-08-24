@@ -66,7 +66,7 @@ const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
             </div>
           </div>
 
-          <Preview product={product} />
+          {product && <Preview product={product} />}
 
           <footer className="lg:border-t flex flex-col lg:flex-row lg:justify-between items-center mt-auto">
             {footerDesktop}
