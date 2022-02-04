@@ -6,7 +6,7 @@ import asterik from "../../public/asterik.svg";
 import asterikLeft from "../../public/asterik-left.svg";
 
 const Header: React.FC = () => (
-  <header className="mx-4 lg:px-8 lg:py-12">
+  <header className="lg:px-8 lg:py-12">
     <div className="mb-2 sm:mb-16">
       <Image alt="A man can’t have enough base­ment swag" src={header} />
     </div>
