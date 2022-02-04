@@ -47,39 +47,35 @@ const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
   );
 
   return (
-    <>
-      {isCartOpen && (
-        <aside
-          className={`flex flex-col border-b border-l transform top-0 right-0 lg:w-1/2 lg:h-screen bg-black fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30
+    <aside
+      className={`flex flex-col border-b border-l transform top-0 right-0 lg:w-1/2 lg:h-screen bg-black fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30
           backdrop-filter backdrop-opacity-80 translate-x-0`}
-          onClick={() => setIsCartOpen(!isCartOpen)}
-        >
-          {closeDrawer}
+      onClick={() => setIsCartOpen(!isCartOpen)}
+    >
+      {closeDrawer}
 
-          <div className="lg:p-8 p-4">
-            <div className="hidden lg:flex">
-              <Image alt="Cart" src={yourCart} />
-            </div>
-            <div className="flex lg:hidden">
-              <Image alt="Cart" className="" src={yourCartMobile} />
-            </div>
+      <div className="lg:p-8 p-4">
+        <div className="hidden lg:flex">
+          <Image alt="Cart" src={yourCart} />
+        </div>
+        <div className="flex lg:hidden">
+          <Image alt="Cart" className="" src={yourCartMobile} />
+        </div>
+      </div>
+
+      {product && <Preview product={product} />}
+
+      <footer className="lg:border-t flex flex-col lg:flex-row lg:justify-between items-center mt-auto">
+        {footerDesktop}
+        <div className="flex flex-col justify-between w-screen p-8 lg:p-0 lg:w-1/3">
+          {footerMobile}
+          <div className="hidden lg:flex border-r h-full mr-8 lg:px-2" />
+          <div className="lg:p-0 border-t lg:border-0">
+            <Image alt="Checkout" height={62} src={checkout} width={343} />
           </div>
-
-          {product && <Preview product={product} />}
-
-          <footer className="lg:border-t flex flex-col lg:flex-row lg:justify-between items-center mt-auto">
-            {footerDesktop}
-            <div className="flex flex-col justify-between w-screen p-8 lg:p-0 lg:w-1/3">
-              {footerMobile}
-              <div className="hidden lg:flex border-r h-full mr-8 lg:px-2" />
-              <div className="lg:p-0 border-t lg:border-0">
-                <Image alt="Checkout" height={62} src={checkout} width={343} />
-              </div>
-            </div>
-          </footer>
-        </aside>
-      )}
-    </>
+        </div>
+      </footer>
+    </aside>
   );
 };
 
