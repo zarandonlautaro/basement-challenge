@@ -4,7 +4,6 @@ import React from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import {PRODUCTS} from "../product/mock";
 import Products from "../product/screen/Products";
 import DrawerStore from "../product/screen/DrawerStore";
 
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
       <main className={`${isCartOpen && "opacity-50"}`} onClick={closeCartIfIsOpen}>
         <Navbar setIsCartOpen={setIsCartOpen} />
         <Header />
-        <Products products={PRODUCTS} />
+        <Products />
         <Footer />
       </main>
       {isCartOpen && <DrawerStore isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />}

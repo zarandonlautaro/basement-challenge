@@ -3,14 +3,13 @@ import * as React from "react";
 import Card from "../components/Card";
 import {Product} from "../types";
 import {addProduct} from "../reducer";
+import {PRODUCTS} from "../mock";
 
-interface Props {
-  products: Product[];
-}
+interface IProducts {}
 
-const StoreScreen: React.FC<Props> = ({products}) => (
+const Products: React.FC<IProducts> = () => (
   <div className="flex justify-around h-full bg-black flex-col lg:flex-row items-center mt-24 mb-12">
-    {products.map((product) => {
+    {PRODUCTS.map((product: Product) => {
       return (
         <Card
           key={product.id}
@@ -24,4 +23,4 @@ const StoreScreen: React.FC<Props> = ({products}) => (
   </div>
 );
 
-export default StoreScreen;
+export default Products;
