@@ -4,8 +4,8 @@ import React from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Products from "../product/screen/Products";
-import DrawerStore from "../product/screen/DrawerStore";
+import Products from "../components/product/screen/Products";
+import DrawerStore from "../components/product/screen/DrawerStore";
 
 const Home: NextPage = () => {
   const [isCartOpen, setIsCartOpen] = React.useState<boolean>(false);
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className={`${isCartOpen && "opacity-50"}`} onClick={closeCartIfIsOpen}>
+      <main className={`${isCartOpen ? "opacity-50" : ""}`} onClick={closeCartIfIsOpen}>
         <Navbar setIsCartOpen={setIsCartOpen} />
         <Header />
         <Products />
