@@ -9,22 +9,18 @@ interface Props {
 }
 
 const StoreScreen: React.FC<Props> = ({products}) => (
-  <div className="mt-24 mb-12">
-    {products.length && (
-      <div className="justify-around flex h-full bg-black flex-col lg:flex-row items-center mx-8">
-        {products.map((product) => {
-          return (
-            <Card
-              key={product.id}
-              product={product}
-              onAdd={() => {
-                addProduct(product);
-              }}
-            />
-          );
-        })}
-      </div>
-    )}
+  <div className="flex justify-around h-full bg-black flex-col lg:flex-row items-center mt-24 mb-12">
+    {products.map((product) => {
+      return (
+        <Card
+          key={product.id}
+          product={product}
+          onAdd={() => {
+            addProduct(product);
+          }}
+        />
+      );
+    })}
   </div>
 );
 
