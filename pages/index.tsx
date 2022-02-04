@@ -15,13 +15,13 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className={`${isCartOpen && "opacity-70"}`} onClick={closeCartIfIsOpen}>
+      <main className={`${isCartOpen && "opacity-50"}`} onClick={closeCartIfIsOpen}>
         <Navbar setIsCartOpen={setIsCartOpen} />
         <Header />
         <Products products={PRODUCTS} />
         <Footer />
       </main>
-      <DrawerStore isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      {isCartOpen && <DrawerStore isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />}
     </>
   );
 };

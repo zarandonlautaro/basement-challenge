@@ -50,9 +50,8 @@ const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
     <>
       {isCartOpen && (
         <aside
-          className={`flex flex-col border-b border-l transform top-0 right-0 lg:w-1/2 lg:h-screen bg-black fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 ${
-            isCartOpen ? "backdrop-filter backdrop-opacity-80 translate-x-0" : "-translate-x-full"
-          }`}
+          className={`flex flex-col border-b border-l transform top-0 right-0 lg:w-1/2 lg:h-screen bg-black fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30
+          backdrop-filter backdrop-opacity-80 translate-x-0`}
           onClick={() => setIsCartOpen(!isCartOpen)}
         >
           {closeDrawer}
