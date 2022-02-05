@@ -1,16 +1,12 @@
 import Image from "next/image";
 import * as React from "react";
 
-import {Product} from "../types";
+import {useAppSelector} from "../../../app/hooks";
 
-interface Props {
-  product: string;
-}
+function Preview(): JSX.Element[] {
+  const products = useAppSelector((state) => state.products);
 
-const Preview: React.FC<Props> = ({product}) => {
-  const parsedProduct = JSON.parse(product);
-
-  return parsedProduct.map((product: Product) => (
+  return products.map((product) => (
     <div key={product.id} className="lg:m-8 lg:p-4 p-4 mx-1 border flex flex-row">
       <div
         className="flex w-2/3"
@@ -29,6 +25,6 @@ const Preview: React.FC<Props> = ({product}) => {
       </div>
     </div>
   ));
-};
+}
 
 export default Preview;

@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 import {Product} from "../components/product/types";
 
-const initialState: Product[] = [{id: 0, image: "../../", price: "500", title: "hola"}];
+const initialState: Product[] = [];
 
 const productSlice = createSlice({
   name: "products",

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import header from "../../public/header.svg";
-import asterik from "../../public/asterik.svg";
-import asterikLeft from "../../public/asterik-left.svg";
+import header from "../../../public/header.svg";
+import asterik from "../../../public/asterik.svg";
+import asterikLeft from "../../../public/asterik-left.svg";
 
 import styles from "./Header.module.css";
 const Header: React.FC = () => (

@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import footer from "../../public/footer.svg";
-interface Props {}
+import footer from "../../../public/footer.svg";
 
-const Footer: React.FC = (props: Props) => {
+const Footer: React.FC = () => {
   return (
     <footer className="px-8 py-12">
       <div className="mb-2 sm:mb-16">

@@ -1,10 +1,11 @@
 import * as React from "react";
 import Image from "next/image";
 
-import yourCart from "../../../public/your-cart.svg";
-import yourCartMobile from "../../../public/your-cart-mobile.svg";
-import checkout from "../../../public/checkout.svg";
+import yourCart from "../../../../public/your-cart.svg";
+import yourCartMobile from "../../../../public/your-cart-mobile.svg";
+import checkout from "../../../../public/checkout.svg";
 import Preview from "../components/Preview";
+import {useAppSelector} from "../../../app/hooks";
 
 interface Props {
   isCartOpen: boolean;
@@ -12,11 +13,7 @@ interface Props {
 }
 
 const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
-  const [product, setProduct] = React.useState<string>("");
-
-  React.useEffect(() => {
-    setProduct(localStorage.getItem("store") || "");
-  }, [product]);
+  const products = useAppSelector((state) => state.products);
 
   const separator = <div className="hidden lg:flex border-r h-full mx-2" />;
 
@@ -62,7 +59,7 @@ const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
         </div>
       </div>
 
-      {product && <Preview product={product} />}
+      <Preview />
 
       <footer className="lg:border-t flex flex-col lg:flex-row lg:justify-between items-center mt-auto">
         {footerDesktop}

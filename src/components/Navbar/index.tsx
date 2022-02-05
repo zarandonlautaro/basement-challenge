@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "../../public/logo.svg";
-import logos from "../../public/logos.svg";
-import logoMobile from "../../public/logo-mobile.svg";
+import logo from "../../../public/logo.svg";
+import logos from "../../../public/logos.svg";
+import logoMobile from "../../../public/logo-mobile.svg";
 import {useAppSelector} from "../../app/hooks";
 
 interface Props {
