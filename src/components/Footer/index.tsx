@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 import footer from "../../public/footer.svg";
-
 interface Props {}
 
 const Footer: React.FC = (props: Props) => {

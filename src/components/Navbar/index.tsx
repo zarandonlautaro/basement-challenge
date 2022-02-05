@@ -5,13 +5,15 @@ import Link from "next/link";
 import logo from "../../public/logo.svg";
 import logos from "../../public/logos.svg";
 import logoMobile from "../../public/logo-mobile.svg";
-import {allProducts} from "../product/reducer";
+import {useAppSelector} from "../../app/hooks";
 
 interface Props {
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Navbar: React.FC<Props> = ({setIsCartOpen}) => {
+  const products = useAppSelector((state) => state.products);
+
   return (
     <nav className="flex justify-between items-center lg:mx-8 lg:my-9 mx-4 my-5">
       <Link href="/">
@@ -31,7 +33,7 @@ const Navbar: React.FC<Props> = ({setIsCartOpen}) => {
         className="w-36 h-12 border rounded-full uppercase"
         onClick={() => setIsCartOpen(true)}
       >
-        {`Cart (${allProducts.length})`}
+        {`Cart (${products.length})`}
       </button>
     </nav>
   );

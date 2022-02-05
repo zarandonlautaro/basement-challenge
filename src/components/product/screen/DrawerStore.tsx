@@ -4,7 +4,6 @@ import Image from "next/image";
 import yourCart from "../../../public/your-cart.svg";
 import yourCartMobile from "../../../public/your-cart-mobile.svg";
 import checkout from "../../../public/checkout.svg";
-import {addProduct} from "../reducer";
 import Preview from "../components/Preview";
 
 interface Props {
