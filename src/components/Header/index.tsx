@@ -12,14 +12,14 @@ const Header: React.FC = () => (
       <Image alt="A man can't have enough basement swag" src={header} />
     </div>
     <div className="relative -left-12 lg:-left-12">
+      <hr className="border-1  lg:w-screen w-150" />
       <p className={`${styles.marquee}`}>
-        <hr className="border-1  lg:w-screen w-150" />
         <span>
           {`A man can't have enough basement swag — A man can't have enough basement swag A man —
           can't have enough basement swag — A man can't have enough basement swag `}
         </span>
-        <hr className="border-1  lg:w-screen w-150" />
       </p>
+      <hr className="border-1 mt-6  lg:w-screen w-150" />
       <div className="hidden lg:flex absolute left-32 -bottom-28">
         <Image alt="Asterik" src={asterik} />
       </div>

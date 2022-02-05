@@ -3,7 +3,7 @@ import * as React from "react";
 
 import {useAppSelector} from "../../../app/hooks";
 
-function Preview(): JSX.Element[] {
+const Preview: JSX.Element[] = (): JSX.Element[] => {
   const products = useAppSelector((state) => state.products);
 
   return products.map((product) => (
@@ -25,6 +25,6 @@ function Preview(): JSX.Element[] {
       </div>
     </div>
   ));
-}
+};
 
 export default Preview;

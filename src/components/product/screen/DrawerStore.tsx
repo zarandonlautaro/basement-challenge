@@ -13,8 +13,6 @@ interface Props {
 }
 
 const DrawerStore: React.FC<Props> = ({isCartOpen, setIsCartOpen}) => {
-  const products = useAppSelector((state) => state.products);
-
   const separator = <div className="hidden lg:flex border-r h-full mx-2" />;
 
   const footerDesktop = (
