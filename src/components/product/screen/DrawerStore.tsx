@@ -5,7 +5,6 @@ import yourCart from "../../../../public/your-cart.svg";
 import yourCartMobile from "../../../../public/your-cart-mobile.svg";
 import checkout from "../../../../public/checkout.svg";
 import Preview from "../components/Preview";
-import {useAppSelector} from "../../../app/hooks";
 
 interface Props {
   isCartOpen: boolean;

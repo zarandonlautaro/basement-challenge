@@ -7,7 +7,7 @@ import asterikLeft from "../../../public/asterik-left.svg";
 
 import styles from "./Header.module.css";
 const Header: React.FC = () => (
-  <header className="lg:px-8 lg:py-12">
+  <header className="lg:p-16 bg-black">
     <div className="mb-2 sm:mb-16">
       <Image alt="A man can't have enough basement swag" src={header} />
     </div>

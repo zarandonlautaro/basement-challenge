@@ -9,10 +9,18 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     setProducts: (state, action: PayloadAction<Product>) => {
-      state.push(action.payload);
+      const pos = state.map((i) => i.id).indexOf(action.payload.id);
+
+      if (pos !== -1) {
+        state[pos] = {...action.payload};
+      } else {
+        state.push({...action.payload});
+      }
     },
+    removeProduct: (state, action: PayloadAction<Product>) =>
+      state.filter((products) => products.id !== action.payload.id),
   },
 });
 
-export const {setProducts} = productSlice.actions;
+export const {setProducts, removeProduct} = productSlice.actions;
 export default productSlice.reducer;

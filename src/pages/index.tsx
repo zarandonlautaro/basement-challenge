@@ -1,6 +1,5 @@
 import type {NextPage} from "next";
-import React, {useEffect} from "react";
-import {useSelector} from "react-redux";
+import React from "react";
 
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
@@ -15,13 +14,15 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className={`${isCartOpen ? "blur-sm" : ""}`} onClick={closeCartIfIsOpen}>
-        <Navbar setIsCartOpen={setIsCartOpen} />
-        <Header />
-        <Products />
-        <Footer />
-      </main>
       {isCartOpen && <DrawerStore isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />}
+      <div className="relative">
+        <main className={`${isCartOpen ? "blur-sm" : ""}`} onClick={closeCartIfIsOpen}>
+          <Navbar setIsCartOpen={setIsCartOpen} />
+          <Header />
+          <Products />
+        </main>
+      </div>
+      <Footer />
     </>
   );
 };

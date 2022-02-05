@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,10 +12,17 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({setIsCartOpen}) => {
+  const [amount, setAmount] = useState(0);
   const products = useAppSelector((state) => state.products);
 
+  useEffect(() => {
+    if (products) {
+      setAmount(products.length);
+    }
+  }, [products]);
+
   return (
-    <nav className="flex justify-between items-center lg:mx-8 lg:my-9 mx-4 my-5">
+    <nav className="sticky top-0 bg-black z-50 w-full flex justify-between items-center lg:px-8 lg:py-9 px-4 py-5">
       <Link href="/">
         <a className="w-48 h-7 hidden lg:flex">
           <Image alt="Basement" src={logo} />
@@ -33,7 +40,7 @@ const Navbar: React.FC<Props> = ({setIsCartOpen}) => {
         className="w-36 h-12 border rounded-full uppercase"
         onClick={() => setIsCartOpen(true)}
       >
-        {`Cart (${products.length})`}
+        {`Cart (${amount})`}
       </button>
     </nav>
   );
