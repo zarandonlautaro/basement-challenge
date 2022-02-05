@@ -12,6 +12,7 @@ const Card: React.FC<Props> = ({product, onAdd}) => {
   return (
     <div
       key={product.id}
+      className="hover:scale-125 cursor-pointer hover:drop-shadow-3xl"
       style={{
         background: "linear-gradient(180deg, #1D1D1D 0%, rgba(21, 21, 21, 0) 100%)",
       }}

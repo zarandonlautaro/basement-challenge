@@ -5,6 +5,7 @@ import Link from "next/link";
 import logo from "../../public/logo.svg";
 import logos from "../../public/logos.svg";
 import logoMobile from "../../public/logo-mobile.svg";
+import {allProducts} from "../product/reducer";
 
 interface Props {
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,7 +31,7 @@ const Navbar: React.FC<Props> = ({setIsCartOpen}) => {
         className="w-36 h-12 border rounded-full uppercase"
         onClick={() => setIsCartOpen(true)}
       >
-        Cart (1)
+        {`Cart (${allProducts.length})`}
       </button>
     </nav>
   );

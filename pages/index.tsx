@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className={`${isCartOpen ? "opacity-50" : ""}`} onClick={closeCartIfIsOpen}>
+      <main className={`${isCartOpen ? "blur-sm" : ""}`} onClick={closeCartIfIsOpen}>
         <Navbar setIsCartOpen={setIsCartOpen} />
         <Header />
         <Products />
