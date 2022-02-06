@@ -2,6 +2,9 @@
 
 ![Basement studio](./public/og.png "basement.supply")
 
+## Demo
+https://vercel.com/zarandonlautaro/basement-challenge
+
 Tenemos que implementar el diseño de [este figma](https://www.figma.com/file/BYjaSbdPyhEL0ucneDlIQ0/Dev-Challenge?node-id=1%3A218) (el equipo de diseño trabajó mucho en el figma, para esta primera etapa podemos omitir detalles mientras todo ande), como el backend todavía no está desarrollado el cliente nos dejó un mock en `/product/mock.json`.
 
 El checkout no está listo tampoco así que con imprimir en consola el pedido al clickear en `CHECKOUT` alcanza.
